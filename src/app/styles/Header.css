@@ -1,0 +1,188 @@
+@import url(../globals.css);
+nav {
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    position: fixed;
+    top: 0px;
+    z-index: 11;
+    padding: 0px 50px;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+  }
+  
+  nav.sticky {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 11;
+    /* padding: 0px 50px; */
+    width: 100%;
+    /* height: var(--nav-height); */
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    nav.sticky {
+      height: var(--nav-scroll-height);
+      transform: translateY(calc(70px * -1));
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    nav {
+      height: var(--nav-scroll-height);
+      transform: translateY(0px);
+      background-color: rgba(10, 25, 47, 0.85);
+    }
+  }
+  
+  nav .navbar {
+    width: 90%;
+    margin: auto;
+  }
+
+  .logo {
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-top: 10px;
+    line-height: normal;
+    color: white;
+  }
+  .logo-name {
+    font-family: "Agustina", sans-serif;
+    font-weight: 700;
+    padding: 0 10px;
+  }
+  nav .navbar .menu {
+    position: relative;
+  }
+  
+  nav .navbar .menu li {
+    list-style: none;
+    margin: 0 8px;
+  }
+  
+  .navbar .menu a {
+    font-family: var(--font-mono);
+    font-size: var(--fz-lg);
+    font-weight: 500;
+    color: var(--green);
+    padding: 6px 0;
+    transition: all 0.4s ease;
+  }
+  
+  .navbar .menu a:hover {
+    color: #5ec8b0a3;
+  }
+  
+  nav.sticky .menu a {
+    color: #fff;
+  }
+  
+  nav.sticky .menu a:hover {
+    color: #0e2431;
+  }
+  
+  .navbar .media-icons a {
+    color: var(--green);
+    font-size: var(--fz-lg);
+    margin: 0 6px;
+  }
+  
+  nav.sticky .media-icons a {
+    color: #fff;
+  }
+  
+  /* Side Navigation Menu Button CSS */
+  nav .menu-btn,
+  .navbar .menu .cancel-btn {
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    top: var(--fz-xl);
+    font-size: var(--fz-xl);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+  }
+  
+  nav .menu-btn {
+    color: #4070f4;
+  }
+  
+  nav.sticky .menu-btn {
+    color: #fff;
+  }
+  
+  .navbar .menu .menu-btn {
+    color: #fff;
+  }
+
+  nav .menu-btn,
+.navbar .menu .cancel-btn {
+  position: absolute;
+  color: #fff;
+  right: 30px;
+  top: var(--fz-xl);
+  font-size: var(--fz-xl);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+nav .menu-btn {
+  color: #4070f4;
+}
+
+nav.sticky .menu-btn {
+  color: #fff;
+}
+
+.navbar .menu .menu-btn {
+  color: #fff;
+}
+.navbar ul{
+  display: none;
+}
+@media (min-width: 768px) {
+  .navbar ul {
+    display: flex;
+  }
+}
+/* @media (max-width: 930px) {
+  nav .navbar {
+    width: 90%;
+  }
+  nav .navbar .menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: #0e2431;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+} */
+ 

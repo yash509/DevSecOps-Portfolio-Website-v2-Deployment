@@ -1,0 +1,19 @@
+@import url(../globals.css);
+
+.scroll-button a {
+    position: fixed;
+    bottom: var(--fz-xl);
+    right: var(--fz-xl);
+    color: var(--green);
+    padding: 7px var(--fz-xxs);
+    font-size: var(--fz-lg);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+    display: none;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .scroll-button a:hover {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }

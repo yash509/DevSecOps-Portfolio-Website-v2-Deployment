@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.1);
+  --blue: #57cbff;
+  --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  --fz-xxs: 12px;
+  --fz-xs: 13px;
+  --fz-sm: 14px;
+  --fz-md: 16px;
+  --fz-lg: 18px;
+  --fz-xl: 20px;
+  --fz-xxl: 22px;
+  --fz-heading: 32px;
+  --border-radius: 4px;
+  --nav-height: 100px;
+  --nav-scroll-height: 70px;
+  --tab-height: 42px;
+  --tab-width: 120px;
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+@import url("http://fonts.cdnfonts.com/css/agustina?styles=50719");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: inherit;
+  position: relative;
+  transition: var(--transition);
+}
+a:hover,
+a:focus {
+  color: var(--green);
+}
+.email__position::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px auto;
+  background-color: var(--light-slate);
+}
+.ds-fl {
+  display: flex;
+}
+.al-c {
+  align-items: center;
+}
+.js-c {
+  justify-content: center;
+}
+.js-sb {
+  justify-content: space-between;
+}
+.ps-ab {
+  position: absolute;
+}
+section {
+  padding-top: 40px;
+  background: var(--navy);
+}
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 100px 170px;
+}
+.numbered__heading {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+  margin: 10px 0px 40px;
+  width: 100%;
+  font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
+  white-space: nowrap;
+}
+
+h2 {
+  margin: 0px 0px 10px;
+  font-size: 1.5em !important;
+  font-weight: 600;
+  color: var(--lightest-slate);
+  line-height: 1.1;
+}
+
+
+.numbered__heading span {
+  font-size: larger;
+  margin-top: -17px;
+}
+
+.numbered__heading::before {
+  position: relative;
+  bottom: 4px;
+  counter-increment: section 1;
+  content: "0" counter(section) ".";
+  margin-right: 10px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 400;
+}
+
+.numbered__heading::after {
+  content: "";
+  display: block;
+  position: relative;
+  top: -5px;
+  width: 300px;
+  height: 1px;
+  margin-left: var(--fz-xl);
+  background-color: var(--lightest-navy);
+}
+section .content {
+  width: 80%;
+  margin: 40px auto 0px;
+  font-family: "Poppins", sans-serif;
+}
+p {
+  margin: 0px 0px 15px;
+}
+p > a {
+  display: inline-block;
+  position: relative;
+  color: var(--green);
+}
+p > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 0.8px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--green);
+  transform-origin: bottom;
+  transition: transform 0.25s ease-out;
+}
+p > a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.swiper {
+  height: 80%;
+  width: 100%;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  transform: scale(2);
+  transform-origin: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 50px 35px;
+  }
+}
+@media screen and (max-width: 1680px) {
+  .section {
+    display: flex;
+    flex-direction: row;
+    padding: 100px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .section__title {
+    margin-right: 50px !important;
+  }
+  .section {
+    padding: 30px !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .section__title {
+    width: 150px;
+  }
+}
