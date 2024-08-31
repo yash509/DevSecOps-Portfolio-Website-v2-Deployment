@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-v2-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: portfolio-v2
+  template:
+    metadata:
+      labels:
+        app: portfolio-v2
+    spec:
+      containers:
+      - name: portfolio-v2
+        image: yash5090/portfolio-v2:latest
+        ports:
+        - containerPort: 3000
