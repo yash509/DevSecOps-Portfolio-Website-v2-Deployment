@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lms-system-deployment
+  name: portfolio-v2-deployment
 spec:
-  replicas: 3 # You can adjust the number of replicas as needed
+  replicas: 6 # You can adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: lms-system
+      app: portfolio-v2
   template:
     metadata:
       labels:
-        app: lms-system
+        app: portfolio-v2
     spec:
       containers:
-        - name: lms-system
-          image: yash5090/lms-system:latest # Replace with the actual image tag
+        - name: portfolio-v2
+          image: yash5090/portfolio-v2:latest # Replace with the actual image tag
           ports:
-            - containerPort: 5000 # Replace with the port your Tetris game listens on
+            - containerPort: 3000 # Replace with the port your Tetris game listens on
